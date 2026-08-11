@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Проекти — Джин Дизайн</title>
+<meta name="description" content="Реализирани проекти на Джин Дизайн: мебели по поръчка, интериорни врати и дървена дограма. Разгледайте галериите по обект." />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="index.html" class="logo">Джин&nbsp;Дизайн</a>
+    <nav class="main">
+      <a href="index.html#uslugi">Услуги</a>
+      <a href="index.html#proces">Процес</a>
+      <a href="index.html#za-nas">За нас</a>
+      <a href="proekti.html">Проекти</a>
+      <a href="index.html#kontakti">Контакти</a>
+    </nav>
+    <a href="index.html#kontakti" class="btn-ink">Запитване</a>
+  </div>
+</header>
+
+<main>
+  <section><div class="wrap">
+    <p class="eyebrow">Портфолио</p>
+    <h1 style="font-size:clamp(30px,4vw,48px);margin-top:12px">Реализирани проекти</h1>
+    <p style="margin-top:16px;max-width:560px;color:var(--muted)">Изберете обект, за да разгледате снимките му. Навигация със стрелките или Esc за затваряне.</p>
+
+    <div class="filters" id="filters">
+      <button class="active" data-cat="all">Всички</button>
+      <button data-cat="mebeli">Мебели</button>
+      <button data-cat="turgovski">Търговски обекти</button>
+      <button data-cat="kashta">Къщи</button>
+    </div>
+
+    <div class="plist" id="plist"></div>
+  </div></section>
+</main>
+
+<div class="lb" id="lb">
+  <button class="x" id="lbClose" aria-label="Затвори">×</button>
+  <button class="prev" id="lbPrev" aria-label="Назад">‹</button>
+  <img id="lbImg" alt="" />
+  <button class="next" id="lbNext" aria-label="Напред">›</button>
+  <div class="cap" id="lbCap"></div>
+</div>
+
+<footer class="site"><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%">
+  <span>© <span id="y"></span> Джин Дизайн</span>
+  <a href="index.html">Начало</a>
+</div></footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+const projects = [
+  {
+    t: "Апартамент",
+    p: "гр. София",
+    c: "mebeli",
+    desc: "Цялостно обзавеждане на тристаен апартамент — кухня, дневна, гардероби и детайлни решения.",
+    imgs: [
+      "images/apartament/1.jpg","images/apartament/2.jpg","images/apartament/3.jpg",
+      "images/apartament/4.jpg","images/apartament/5.jpg","images/apartament/6.jpg",
+      "images/apartament/7.jpg","images/apartament/8.jpg","images/apartament/9.jpg"
+    ]
+  },
+  {
+    t: "Апартамент II",
+    p: "гр. София",
+    c: "mebeli",
+    desc: "Съвременна кухня и дневна зона в жилищен интериор със студени и топли дървесни акценти.",
+    imgs: [
+      "images/apartament2/1.jpg","images/apartament2/2.jpg","images/apartament2/3.jpg",
+      "images/apartament2/4.jpg","images/apartament2/5.jpg","images/apartament2/7.jpg",
+      "images/apartament2/8.jpg","images/apartament2/9.jpg","images/apartament2/10.jpg",
+      "images/apartament2/11.jpg"
+    ]
+  },
+  {
+    t: "Сладкарница Теа",
+    p: "гр. София",
+    c: "turgovski",
+    desc: "Търговски интериор с цветни мебели, витрини и бар зона за сладкарница.",
+    imgs: [
+      "images/sladkarnica/1.jpg","images/sladkarnica/2.jpg","images/sladkarnica/3.jpg",
+      "images/sladkarnica/4.jpg","images/sladkarnica/5.jpg","images/sladkarnica/6.jpg",
+      "images/sladkarnica/7.jpg","images/sladkarnica/8.jpg","images/sladkarnica/9.jpg",
+      "images/sladkarnica/10.jpg"
+    ]
+  },
+  {
+    t: "Къща Майорка",
+    p: "Палма де Майорка",
+    c: "kashta",
+    desc: "Пълно обзавеждане на къща на брега — кухня, трапезария, дневна и спални зони.",
+    imgs: [
+      "images/maiorka/1.jpg","images/maiorka/2.jpg","images/maiorka/3.jpg","images/maiorka/4.jpg",
+      "images/maiorka/5.jpg","images/maiorka/6.jpg","images/maiorka/7.jpg","images/maiorka/8.jpg",
+      "images/maiorka/9.jpg","images/maiorka/10.jpg","images/maiorka/11.jpg","images/maiorka/12.jpg",
+      "images/maiorka/13.jpg","images/maiorka/14.jpg","images/maiorka/15.jpg","images/maiorka/16.jpg",
+      "images/maiorka/17.jpg","images/maiorka/18.jpg","images/maiorka/19.jpg","images/maiorka/20.jpg",
+      "images/maiorka/21.jpg","images/maiorka/22.jpg","images/maiorka/23.jpg","images/maiorka/24.jpg",
+      "images/maiorka/25.jpg","images/maiorka/26.jpg","images/maiorka/27.jpg","images/maiorka/28.jpg",
+      "images/maiorka/29.jpg","images/maiorka/30.jpg","images/maiorka/31.jpg","images/maiorka/32.jpg",
+      "images/maiorka/33.jpg","images/maiorka/34.jpg"
+    ]
+  }
+];
+
+const list = document.getElementById('plist');
+let cat = 'all';
+
+function render(){
+  list.innerHTML = '';
+  projects.filter(p => cat === 'all' || p.c === cat).forEach((p) => {
+    const i = projects.indexOf(p);
+    const fig = document.createElement('figure');
+    fig.className = 'pcard item';
+    fig.innerHTML = '<img src="'+p.imgs[0]+'" alt="'+p.t+', '+p.p+'" loading="lazy" />' +
+      '<span class="count">'+p.imgs.length+' снимки</span>' +
+      '<figcaption><b>'+p.t+'</b><span>'+p.p+'</span></figcaption>';
+    fig.addEventListener('click', () => open(i, 0));
+    list.appendChild(fig);
+  });
+}
+
+document.getElementById('filters').addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if(!b) return;
+  cat = b.dataset.cat;
+  [...e.currentTarget.children].forEach(x => x.classList.toggle('active', x === b));
+  render();
+});
+
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap');
+let cur = 0, idx = 0;
+function open(p, i){ cur = p; idx = i; lb.classList.add('open'); show(); }
+function show(){
+  const p = projects[cur];
+  lbImg.src = p.imgs[idx];
+  lbImg.alt = p.t;
+  lbCap.textContent = p.t + ' · ' + p.p + '  —  ' + (idx+1) + ' / ' + p.imgs.length;
+}
+function step(d){ const n = projects[cur].imgs.length; idx = (idx + d + n) % n; show(); }
+function close(){ lb.classList.remove('open'); }
+document.getElementById('lbClose').onclick = close;
+document.getElementById('lbPrev').onclick = () => step(-1);
+document.getElementById('lbNext').onclick = () => step(1);
+lb.addEventListener('click', (e) => { if(e.target === lb) close(); });
+document.addEventListener('keydown', (e) => {
+  if(!lb.classList.contains('open')) return;
+  if(e.key === 'Escape') close();
+  if(e.key === 'ArrowRight') step(1);
+  if(e.key === 'ArrowLeft') step(-1);
+});
+
+render();
+</script>
+</body>
+</html>

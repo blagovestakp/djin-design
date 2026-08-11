@@ -1,29 +1,44 @@
-# Welcome to your Lovable project
+# Djin Design
 
-This project was built with [Lovable](https://lovable.dev).
+Уебсайт портфолио за интериорен дизайн и интериорни решения, изграден с React, Vite и Tailwind CSS.
 
-## Build with Lovable
+## 📌 За проекта
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+**Djin Design** е модерен уебсайт, представящ портфолио от реализирани интериорни проекти (апартаменти, търговски обекти, заведения и др.). Включва интерактивни галерии, списък с проекти и информация за контакт.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+---
 
-## Development
+## 🚀 Локално стартиране (Development)
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Ако искаш да стартираш проекта на своя компютър, ще ти е необходим Node.js или Bun.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+1. Clone the repository:
+git clone https://github.com/blagovestakp/djin-design.git
+cd djin-design
+
+2. Install the dependencies:
+npm install
+
+3. Start the local development server:
 npm run dev
-```
 
-## Built with
+---
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## 🛠️ Built with
+
+* **React** – Фронтенд библиотека за изграждане на потребителския интерфейс
+* **Vite** – Бърз build tool за разработка
+* **TypeScript** – Строго типизиран JavaScript
+* **Tailwind CSS** – Utility-first CSS рамка за отзивчив дизайн
+* **shadcn/ui** – Компоненти за потребителски интерфейс
+* **Bun** – Скоростен JavaScript runtime и пакетен мениджър
+* **Lovable** – Инструмент за разработка и генерация на код
+
+---
+
+## ⚡ Разработка с Lovable
+
+Този проект е създаден с поддръжката на **Lovable**.
+
+* **Бърза разработка:** Описваш какво искаш да изградиш, а Lovable се грижи за кода.
+* **Синхронизация:** Свързването с GitHub гарантира, че всяка промяна се запазва директно в репозиторията.
